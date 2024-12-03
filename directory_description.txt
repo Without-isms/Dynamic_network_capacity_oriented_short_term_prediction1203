@@ -1,0 +1,470 @@
+原有目录结构:
+Dynamic_network_capacity_oriented_short_term_prediction/
+    generating_domain_knowledge_no_DO.py
+    train_button.py
+    evaluate_att.py
+    README.md
+    directory_description.txt
+    models/
+        GGRUCell.py
+        rgcn.py
+        __init__.py
+        Net_1004.py
+        gat.py
+        DualInfoTransformer.py
+        GATRUCell.py
+        OD_Net_new.py
+        OD_Net_att.py
+    lib/
+        __init__.py
+        metrics.py
+        utils_HIAM_button.py
+    .idea/
+        inspectionProfiles/
+    archieve/
+        Net_button.py
+        train_new.py
+        generating_compressed_OD_section_possibility_array.py
+        test_PYGT_0729.py
+        train_no_DO.py
+        train.py
+        train_att.py
+        generating_domain_knowledge.py
+        evaluate.py
+        Generating_faked_Depart.py
+        run_PYGT_0729.py
+        lib/
+            utils_HIAM_new.py
+            utils_HIAM_no_DO.py
+            utils_HIAM.py
+        models/
+            DO_Net.py
+            Net_no_DO.py
+            Net_att.py
+            DO_Net_new.py
+            OD_Net.py
+            Net.py
+            Net_new.py
+    data/
+        README.md
+        config/
+            eval_sz_dim26_units96_h4c512.yaml
+            eval_sh_dim76_units96_h4c512.yaml
+            eval_hz_dim26_units96_h4c512.yaml
+            train_hz_dim26_units96_h4c512.yaml
+            train_sh_dim76_units96_h4c512.yaml
+            train_sz_dim26_units96_h4c512.yaml
+        checkpoint/
+            epoch-3-0921.pt
+            sz/
+                HIAM_96-96_lr0.001_bs2_0919072218/
+                    config-1.yaml
+                    config-2.yaml
+                    config-3.yaml
+                    config-4.yaml
+                    config-5.yaml
+                    config-6.yaml
+                    config-7.yaml
+                    config-8.yaml
+                    epoch-1.pt
+                    epoch-2.pt
+                    epoch-3.pt
+                    epoch-4.pt
+                    epoch-5.pt
+                    epoch-6.pt
+                    epoch-7.pt
+                    epoch-8.pt
+                    info.log
+            hz/
+        suzhou/
+            Time_DepartFreDic.pkl
+            result_API.xlsx
+            test_dataset.pkl
+            OD_path_dic.pkl
+            graph_sz_conn.pkl
+            OD_path_visit_prob_dic.pkl
+            shanghai.json
+            suzhou_sub_data.xlsx
+            train_dict.pkl
+            OD_path_visit_prob_array.pkl
+            normalization_params.pkl
+            station_index_no_11.pkl
+            trip_generation_trained_params.pkl
+            train_Time_DepartFreDic_Array.pkl
+            station_manager_dict_no_11.pkl
+            test_Time_DepartFreDic_Array.pkl
+            Suzhou_zhandian_no_11.xlsx
+            val_Time_DepartFreDic_Array.pkl
+            station_index.pkl
+            graph_sz_conn_no_11.pkl
+            Time_DepartFreDic_Array.pkl
+            result_API_modified.xlsx
+            OD/
+                val_OD_prdc_signal_dict.pkl
+                val_OD_feature_array_dic.pkl
+                val_Time_DepartFreDic_Matrix.pkl
+                test_repeated_sparse_2D_tensors.pt
+                val_repeated_sparse_2D_tensors.pt
+                train_prdc_history_long.pkl
+                train_Time_DepartFreDic_Matrix.pkl
+                test_OD_feature_array_dic.pkl
+                train_test_dataset.pkl
+                test_Date_and_time_OD_path_dic.pkl
+                train_OD_signal_dict_array.pkl
+                train_prdc_result_array_OD.pkl
+                train_sparse_4d_tensor_list.pt
+                train_Time_DepartFreDic_Array.pkl
+                train_repeated_sparse_4D_tensors.pt
+                OD_path_dic.pkl
+                val_Date_and_time_OD_path_dic.pkl
+                test_result_array_OD.pkl
+                train_repeated_sparse_2D_tensors.pt
+                test_Time_DepartFreDic_Array.pkl
+                train_sparse_tensors_OD_3_paths_all_OD.pt
+                train_prdc_history_short.pkl
+                test_sparse_3d_tensor_list.pt
+                test_OD_feature_array.pkl
+                train_result_array_OD.pkl
+                train_history_long.pkl
+                val_OD_signal_prdc_dict.pkl
+                train_sparse_5d_tensor.pt
+                val_Date_and_time_OD_path_Matrix.pkl
+                val_repeated_Time_DepartFre_Array.pkl
+                train_OD_attr_signal_dict.pkl
+                val_repeated_sparse_4D_tensors.pt
+                train_Date_and_time_OD_path_dic.pkl
+                val_sparse_3d_tensor_list.pt
+                test_repeated_sparse_4D_tensors.pt
+                hyperparameters.pkl
+                train_result_array_DO.pkl
+                val_history_long.pkl
+                test_result_array_DO.pkl
+                test_OD_attr_signal_dict.pkl
+                test_OD_signal_dict_array.pkl
+                train_Date_and_time_OD_path_Matrix.pkl
+                val_Time_DepartFreDic_Array.pkl
+                train_repeated_sparse_tensors.pt
+                test_sparse_tensors_OD_3_paths_all_OD.pt
+                test_OD_prdc_signal_dict.pkl
+                train_OD_prdc_signal_dict.pkl
+                test_repeated_sparse_tensors.pt
+                val_result_array_DO.pkl
+                train_OD_feature_array_dic.pkl
+                train_prdc_OD_signal_dict.pkl
+                train_repeated_sparse_3D_tensors.pt
+                val_result_array_OD.pkl
+                val_sparse_4d_tensor_list.pt
+                val_sparse_5d_tensor.pt
+                val_OD_signal_dict_array.pkl
+                val_OD_feature_array.pkl
+                train_repeated_OD_feature_array.pkl
+                test_repeated_Time_DepartFre_Array.pkl
+                train_history_short.pkl
+                test_repeated_sparse_5D_tensors.pt
+                val_repeated_sparse_5D_tensors.pt
+                test_Date_and_time_OD_path_Matrix.pkl
+                val_repeated_sparse_3D_tensors.pt
+                train_OD_feature_array.pkl
+                test.pkl
+                val_history_short.pkl
+                test_history_long.pkl
+                test_repeated_sparse_3D_tensors.pt
+                attr_RecurrentGCN_model.pth
+                test_history_short.pkl
+                val_repeated_sparse_tensors.pt
+                train_prdc.pkl
+                test_repeated_OD_feature_array.pkl
+                train_repeated_sparse_5D_tensors.pt
+                train_prdc_OD_signal_dict_array.pkl
+                prdc_RecurrentGCN_model.pth
+                val_repeated_OD_feature_array.pkl
+                val_sparse_tensors_OD_3_paths_all_OD.pt
+                val_OD_attr_signal_dict.pkl
+                train.pkl
+                val.pkl
+                train_sparse_3d_tensor_list.pt
+                train_repeated_Time_DepartFre_Array.pkl
+                test_Time_DepartFreDic_Matrix.pkl
+    dmn_knw_gnrtr/
+        generating_repeated_or_not_repeated_domain_knowledge.py
+        fit_trip_generation_model.py
+        generating_array_OD.py
+        run_PYGT_0917.py
+        Generating_Metro_Related_data.py
+        test_PYGT_0917.py
+        PYGT_signal_generation_one_hot.py
+        generating_OD_section_pssblty_sparse_array.py
+    metro_components/
+        MetroUtil.py
+        StationManager.py
+        LineManager.py
+        Route.py
+        Line.py
+        OD.py
+        Section.py
+        MetroRequester_SuZhou.py
+        Station.py
+        Path.py
+    SOTA/
+        Graph-WaveNet-master/
+            model1.py
+            engine1.py
+            metrics.py
+            util1.py
+            scripts.sh
+            train1.py
+        DCRNN/
+            model/
+            data/
+                config/
+            lib/
+    test_file/
+        check_size_date.py
+        deleting_tem.py
+        read_file.py
+        generate_project_structure.py
+        prune_empty_log_folders.py
+    metro_data_convertor/
+        Convert_objects_to_dict.py
+        convert_objects_to_dict.py
+        Find_project_root.py
+        Get_Time_DepartFreDic.py
+        Generating_logit_probabilities.py
+        Reprocessing_OD_visiting_prob.py
+        Process_Time_DepartFreDic.py
+
+分级显示的目录结构:
+Dynamic_network_capacity_oriented_short_term_prediction/
+Dynamic_network_capacity_oriented_short_term_prediction/
+    [1] generating_domain_knowledge_no_DO.py
+    [2] train_button.py
+    [3] evaluate_att.py
+    α. README.md
+    β. directory_description.txt
+1. models/
+        [4] GGRUCell.py
+        [5] rgcn.py
+        [6] __init__.py
+        [7] Net_1004.py
+        [8] gat.py
+        [9] DualInfoTransformer.py
+        [10] GATRUCell.py
+        [11] OD_Net_new.py
+        [12] OD_Net_att.py
+2. lib/
+        [13] __init__.py
+        [14] metrics.py
+        [15] utils_HIAM_button.py
+3. .idea/
+        1) inspectionProfiles/
+4. archieve/
+        [16] Net_button.py
+        [17] train_new.py
+        [18] generating_compressed_OD_section_possibility_array.py
+        [19] test_PYGT_0729.py
+        [20] train_no_DO.py
+        [21] train.py
+        [22] train_att.py
+        [23] generating_domain_knowledge.py
+        [24] evaluate.py
+        [25] Generating_faked_Depart.py
+        [26] run_PYGT_0729.py
+        1) lib/
+            [27] utils_HIAM_new.py
+            [28] utils_HIAM_no_DO.py
+            [29] utils_HIAM.py
+        2) models/
+            [30] DO_Net.py
+            [31] Net_no_DO.py
+            [32] Net_att.py
+            [33] DO_Net_new.py
+            [34] OD_Net.py
+            [35] Net.py
+            [36] Net_new.py
+5. data/
+        γ. README.md
+        1) config/
+            a. eval_sz_dim26_units96_h4c512.yaml
+            b. eval_sh_dim76_units96_h4c512.yaml
+            c. eval_hz_dim26_units96_h4c512.yaml
+            d. train_hz_dim26_units96_h4c512.yaml
+            e. train_sh_dim76_units96_h4c512.yaml
+            f. train_sz_dim26_units96_h4c512.yaml
+        2) checkpoint/
+            A. epoch-3-0921.pt
+            (1) sz/
+                HIAM_96-96_lr0.001_bs2_0919072218/
+                    g. config-1.yaml
+                    h. config-2.yaml
+                    i. config-3.yaml
+                    j. config-4.yaml
+                    k. config-5.yaml
+                    l. config-6.yaml
+                    m. config-7.yaml
+                    n. config-8.yaml
+                    B. epoch-1.pt
+                    C. epoch-2.pt
+                    D. epoch-3.pt
+                    E. epoch-4.pt
+                    F. epoch-5.pt
+                    G. epoch-6.pt
+                    H. epoch-7.pt
+                    I. epoch-8.pt
+                    δ. info.log
+            (2) hz/
+        3) suzhou/
+            J. Time_DepartFreDic.pkl
+            K. result_API.xlsx
+            L. test_dataset.pkl
+            M. OD_path_dic.pkl
+            N. graph_sz_conn.pkl
+            O. OD_path_visit_prob_dic.pkl
+            ε. shanghai.json
+            P. suzhou_sub_data.xlsx
+            Q. train_dict.pkl
+            R. OD_path_visit_prob_array.pkl
+            S. normalization_params.pkl
+            T. station_index_no_11.pkl
+            U. trip_generation_trained_params.pkl
+            V. train_Time_DepartFreDic_Array.pkl
+            W. station_manager_dict_no_11.pkl
+            X. test_Time_DepartFreDic_Array.pkl
+            Y. Suzhou_zhandian_no_11.xlsx
+            Z. val_Time_DepartFreDic_Array.pkl
+            AA. station_index.pkl
+            AB. graph_sz_conn_no_11.pkl
+            AC. Time_DepartFreDic_Array.pkl
+            AD. result_API_modified.xlsx
+            (1) OD/
+                AE. val_OD_prdc_signal_dict.pkl
+                AF. val_OD_feature_array_dic.pkl
+                AG. val_Time_DepartFreDic_Matrix.pkl
+                AH. test_repeated_sparse_2D_tensors.pt
+                AI. val_repeated_sparse_2D_tensors.pt
+                AJ. train_prdc_history_long.pkl
+                AK. train_Time_DepartFreDic_Matrix.pkl
+                AL. test_OD_feature_array_dic.pkl
+                AM. train_test_dataset.pkl
+                AN. test_Date_and_time_OD_path_dic.pkl
+                AO. train_OD_signal_dict_array.pkl
+                AP. train_prdc_result_array_OD.pkl
+                AQ. train_sparse_4d_tensor_list.pt
+                AR. train_Time_DepartFreDic_Array.pkl
+                AS. train_repeated_sparse_4D_tensors.pt
+                AT. OD_path_dic.pkl
+                AU. val_Date_and_time_OD_path_dic.pkl
+                AV. test_result_array_OD.pkl
+                AW. train_repeated_sparse_2D_tensors.pt
+                AX. test_Time_DepartFreDic_Array.pkl
+                AY. train_sparse_tensors_OD_3_paths_all_OD.pt
+                AZ. train_prdc_history_short.pkl
+                BA. test_sparse_3d_tensor_list.pt
+                BB. test_OD_feature_array.pkl
+                BC. train_result_array_OD.pkl
+                BD. train_history_long.pkl
+                BE. val_OD_signal_prdc_dict.pkl
+                BF. train_sparse_5d_tensor.pt
+                BG. val_Date_and_time_OD_path_Matrix.pkl
+                BH. val_repeated_Time_DepartFre_Array.pkl
+                BI. train_OD_attr_signal_dict.pkl
+                BJ. val_repeated_sparse_4D_tensors.pt
+                BK. train_Date_and_time_OD_path_dic.pkl
+                BL. val_sparse_3d_tensor_list.pt
+                BM. test_repeated_sparse_4D_tensors.pt
+                BN. hyperparameters.pkl
+                BO. train_result_array_DO.pkl
+                BP. val_history_long.pkl
+                BQ. test_result_array_DO.pkl
+                BR. test_OD_attr_signal_dict.pkl
+                BS. test_OD_signal_dict_array.pkl
+                BT. train_Date_and_time_OD_path_Matrix.pkl
+                BU. val_Time_DepartFreDic_Array.pkl
+                BV. train_repeated_sparse_tensors.pt
+                BW. test_sparse_tensors_OD_3_paths_all_OD.pt
+                BX. test_OD_prdc_signal_dict.pkl
+                BY. train_OD_prdc_signal_dict.pkl
+                BZ. test_repeated_sparse_tensors.pt
+                CA. val_result_array_DO.pkl
+                CB. train_OD_feature_array_dic.pkl
+                CC. train_prdc_OD_signal_dict.pkl
+                CD. train_repeated_sparse_3D_tensors.pt
+                CE. val_result_array_OD.pkl
+                CF. val_sparse_4d_tensor_list.pt
+                CG. val_sparse_5d_tensor.pt
+                CH. val_OD_signal_dict_array.pkl
+                CI. val_OD_feature_array.pkl
+                CJ. train_repeated_OD_feature_array.pkl
+                CK. test_repeated_Time_DepartFre_Array.pkl
+                CL. train_history_short.pkl
+                CM. test_repeated_sparse_5D_tensors.pt
+                CN. val_repeated_sparse_5D_tensors.pt
+                CO. test_Date_and_time_OD_path_Matrix.pkl
+                CP. val_repeated_sparse_3D_tensors.pt
+                CQ. train_OD_feature_array.pkl
+                CR. test.pkl
+                CS. val_history_short.pkl
+                CT. test_history_long.pkl
+                CU. test_repeated_sparse_3D_tensors.pt
+                ζ. attr_RecurrentGCN_model.pth
+                CV. test_history_short.pkl
+                CW. val_repeated_sparse_tensors.pt
+                CX. train_prdc.pkl
+                CY. test_repeated_OD_feature_array.pkl
+                CZ. train_repeated_sparse_5D_tensors.pt
+                DA. train_prdc_OD_signal_dict_array.pkl
+                η. prdc_RecurrentGCN_model.pth
+                DB. val_repeated_OD_feature_array.pkl
+                DC. val_sparse_tensors_OD_3_paths_all_OD.pt
+                DD. val_OD_attr_signal_dict.pkl
+                DE. train.pkl
+                DF. val.pkl
+                DG. train_sparse_3d_tensor_list.pt
+                DH. train_repeated_Time_DepartFre_Array.pkl
+                DI. test_Time_DepartFreDic_Matrix.pkl
+6. dmn_knw_gnrtr/
+        [37] generating_repeated_or_not_repeated_domain_knowledge.py
+        [38] fit_trip_generation_model.py
+        [39] generating_array_OD.py
+        [40] run_PYGT_0917.py
+        [41] Generating_Metro_Related_data.py
+        [42] test_PYGT_0917.py
+        [43] PYGT_signal_generation_one_hot.py
+        [44] generating_OD_section_pssblty_sparse_array.py
+7. metro_components/
+        [45] MetroUtil.py
+        [46] StationManager.py
+        [47] LineManager.py
+        [48] Route.py
+        [49] Line.py
+        [50] OD.py
+        [51] Section.py
+        [52] MetroRequester_SuZhou.py
+        [53] Station.py
+        [54] Path.py
+8. SOTA/
+        1) Graph-WaveNet-master/
+            [55] model1.py
+            [56] engine1.py
+            [57] metrics.py
+            [58] util1.py
+            θ. scripts.sh
+            [59] train1.py
+        2) DCRNN/
+            (1) model/
+            (2) data/
+                config/
+            (3) lib/
+9. test_file/
+        [60] check_size_date.py
+        [61] deleting_tem.py
+        [62] read_file.py
+        [63] generate_project_structure.py
+        [64] prune_empty_log_folders.py
+10. metro_data_convertor/
+        [65] Convert_objects_to_dict.py
+        [66] convert_objects_to_dict.py
+        [67] Find_project_root.py
+        [68] Get_Time_DepartFreDic.py
+        [69] Generating_logit_probabilities.py
+        [70] Reprocessing_OD_visiting_prob.py
+        [71] Process_Time_DepartFreDic.py

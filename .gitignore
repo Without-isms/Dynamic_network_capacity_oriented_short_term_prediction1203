@@ -1,0 +1,13 @@
+# 忽略 Python 缓存文件
+__pycache__/
+
+# 忽略数据检查点
+data/checkpoint/
+
+# 忽略生成的文件
+*.pkl
+*.pt
+*.pkl
+
+# 忽略特定目录
+data/
